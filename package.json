@@ -1,0 +1,36 @@
+{
+    "name": "kinopoisk-rating",
+    "version": "0.1.0",
+    "description": "API-клиент для получения рейтингов с Кинопоиска и IMDb",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "test": "set NODE_ENV=test && jest",
+        "console": "ts-node demo/console.ts",
+        "eslint": "eslint"
+    },
+    "keywords": [
+        "kinopoisk",
+        "imdb",
+        "rating",
+        "api",
+        "movies",
+        "xml"
+    ],
+    "dependencies": {
+        "axios": "^1.8.1",
+        "xml2js": "^0.6.2"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/xml2js": "^0.4.14",
+        "eslint": "^9.21.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.2.6",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2",
+        "@typescript-eslint/eslint-plugin": "^8.25.0",
+        "@typescript-eslint/parser": "^8.25.0",
+        "@eslint/js": "^9.21.0"
+    }
+}
