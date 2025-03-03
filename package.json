@@ -4,6 +4,7 @@
     "description": "API-клиент для получения рейтингов с Кинопоиска и IMDb",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "license": "MIT",
     "scripts": {
         "test": "set NODE_ENV=test && jest",
         "console": "ts-node demo/console.ts",
