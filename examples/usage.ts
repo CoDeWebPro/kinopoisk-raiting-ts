@@ -1,6 +1,6 @@
-import { KinopoiskRating } from '../src';
+import { KinopoiskRating } from '../src/KinopoiskRating';
 
-async function example() {
+async function main() {
     try {
         // ID фильма "Матрица" на Кинопоиске
         const movieId = 301;
@@ -11,4 +11,4 @@ async function example() {
     }
 }
 
-example(); 
+main(); 

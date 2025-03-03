@@ -3,35 +3,56 @@ import typescript from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 
 export default [
-    js.configs.recommended,
     {
-        files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+        ignores: ['dist/**/*', 'examples/*.js']
+    },
+    {
+        files: ['**/*.js'],
+        ...js.configs.recommended,
+        languageOptions: {
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+            globals: {
+                console: true,
+                module: true,
+                require: true,
+                exports: true,
+                jest: true,
+                describe: true,
+                test: true,
+                expect: true,
+                beforeEach: true,
+                AbortController: true,
+                process: true
+            }
+        }
+    },
+    {
+        files: ['**/*.ts'],
         languageOptions: {
             parser: tsParser,
             parserOptions: {
                 ecmaVersion: 'latest',
-                sourceType: 'module',
+                sourceType: 'module'
             },
             globals: {
-                console: 'readonly',
-                module: 'readonly',
-                require: 'readonly',
-                exports: 'readonly',
-                jest: 'readonly',
-                describe: 'readonly',
-                test: 'readonly',
-                expect: 'readonly',
-                beforeEach: 'readonly',
-                AbortController: 'readonly'
+                console: true,
+                jest: true,
+                describe: true,
+                test: true,
+                expect: true,
+                beforeEach: true,
+                AbortController: true,
+                process: true
             }
         },
         plugins: {
-            '@typescript-eslint': typescript,
+            '@typescript-eslint': typescript
         },
         rules: {
             ...typescript.configs.recommended.rules,
             '@typescript-eslint/no-explicit-any': 'warn',
             'no-undef': 'error'
-        },
-    },
+        }
+    }
 ]; 

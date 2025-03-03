@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Rating, KinopoiskError } from './types';
 import { parseXML } from './utils';
 
@@ -37,13 +37,14 @@ export class KinopoiskRating {
 
             this.cache.set(movieId, rating);
             return rating;
-        } catch (error: any) {
+        } catch (error) {
             if (typeof jest === 'undefined') {
                 console.error("Ошибка при получении рейтинга:", error);
             }
+            const axiosError = error as AxiosError;
             throw new KinopoiskError(
-        `Ошибка ${error.response?.status || "UNKNOWN"}: ${error.message}`,
-                error.response?.status
+                `Ошибка ${axiosError.response?.status || "UNKNOWN"}: ${axiosError.message}`,
+                axiosError.response?.status
             );
         }
     }

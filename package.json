@@ -1,6 +1,6 @@
 {
     "name": "kinopoisk-rating",
-    "version": "0.2.4",
+    "version": "0.3.1",
     "description": "API-клиент для получения рейтингов с Кинопоиска и IMDb",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -35,7 +35,7 @@
         "jest": "^29.7.0",
         "ts-jest": "^29.2.6",
         "ts-node": "^10.9.2",
-        "typescript": "^5.8.2",
+        "typescript": "^5.7.2",
         "@typescript-eslint/eslint-plugin": "^8.25.0",
         "@typescript-eslint/parser": "^8.25.0",
         "@eslint/js": "^9.21.0"
