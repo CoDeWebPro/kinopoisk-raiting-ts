@@ -1,6 +1,6 @@
 {
     "name": "kinopoisk-rating",
-    "version": "0.1.1",
+    "version": "0.2.3",
     "description": "API-клиент для получения рейтингов с Кинопоиска и IMDb",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -9,9 +9,12 @@
       "access": "public"
     },
     "scripts": {
+      "build": "tsc",
         "test": "set NODE_ENV=test && jest",
-        "console": "ts-node demo/console.ts",
-        "eslint": "eslint"
+        "eslint": "eslint",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run eslint",
+        "example": "ts-node examples/usage.ts"
     },
     "keywords": [
         "kinopoisk",

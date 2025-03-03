@@ -82,7 +82,7 @@ class KinopoiskError extends Error {
 
 ```bash
 # Установка зависимостей
-npm install
+npm install --legacy-peer-deps
 
 # Сборка проекта
 npm run build
