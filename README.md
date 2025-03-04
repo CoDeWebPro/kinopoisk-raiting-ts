@@ -8,26 +8,23 @@ Node.js библиотека для получения рейтингов фил
 npm install kinopoisk-rating
 ```
 
-## Использование
-
-### В коде
+## Пример использование
 
 ```typescript
-import { KinopoiskRating } from 'kinopoisk-rating';
-import { KinopoiskError } from 'kinopoisk-rating';
+import { KinopoiskRating, KinopoiskError } from 'kinopoisk-rating';
 
 async function main() {
     try {
-        const movieId = 678552; // ID фильма "Побег из Шоушенка"
+        const movieId = 326; // ID фильма "Побег из Шоушенка"
         const rating = await KinopoiskRating.getRating(movieId);
         
         console.log('Кинопоиск:');
-        console.log(`  Рейтинг: ${rating.kp.rating.toFixed(1)}`);  // 6.6
-        console.log(`  Голосов: ${rating.kp.votes.toLocaleString()}`);  // 131 760
+        console.log(`  Рейтинг: ${rating.kp.rating.toFixed(1)}`);  // 9.1
+        console.log(`  Голосов: ${rating.kp.votes.toLocaleString()}`);  // 1 069 898
         
         console.log('\nIMDb:');
-        console.log(`  Рейтинг: ${rating.imdb.rating.toFixed(1)}`);  // 6.8
-        console.log(`  Голосов: ${rating.imdb.votes.toLocaleString()}`);  // 478 145
+        console.log(`  Рейтинг: ${rating.imdb.rating.toFixed(1)}`);  // 9.3
+        console.log(`  Голосов: ${rating.imdb.votes.toLocaleString()}`);  // 3 011 510
     } catch (error) {
         if (error instanceof KinopoiskError) {
             console.error('Ошибка:', error.message);
@@ -44,10 +41,7 @@ async function main() {
 
 ```bash
 # Получить рейтинг фильма "Побег из Шоушенка" (используется по умолчанию)
-npm run console
-
-# Получить рейтинг для конкретного фильма по его ID
-npm run console -- 123456
+npm run example
 ```
 
 ## Форматы данных
@@ -90,10 +84,9 @@ npm run build
 # Запуск тестов
 npm test
 
-# Запуск консольного примера
-npm run console
+# Запуск примера
+npm run example
 ```
 
 ## Лицензии
 Этот проект лицензирован под лицензией MIT.
-
